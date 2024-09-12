@@ -14,21 +14,18 @@ class _ImageToggler extends State<ImageToggler> {
 
 //there needs be a counter that is incremented and then decremented to set the image
 
-  void counterChange() {
+  void toggleImage(){
     setState(() {
       if (counter == 1) {
-        counter++;
+        counter++; //if the counter is 1, increment it, counter becomes 2
       } else {
+        /*if the counter does not equal 1, decrement,
+      I could make this better but meh, it works just fine*/
         counter--;
       }
     });
   }
 
-  void toggleImage() {
-    setState(() {
-      counterChange();
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,10 +40,10 @@ class _ImageToggler extends State<ImageToggler> {
           const SizedBox(
             height: 20,
           ),
-          TextButton(
+          OutlinedButton(
             onPressed: toggleImage,
             style: TextButton.styleFrom(
-              backgroundColor: const Color.fromRGBO(112, 72, 176, 1),
+              backgroundColor: const Color.fromARGB(255, 151, 127, 237),
               foregroundColor: Colors.white,
               textStyle: const TextStyle(fontSize: 28),
             ),
